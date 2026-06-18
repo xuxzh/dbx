@@ -20,7 +20,7 @@ plugins/jdbc/dist/
 docs/.next/
 docs/out/
 docs/.source/
-docs/superpowers/
+# docs/superpowers/
 src-tauri/*.dylib
 
 # OS files

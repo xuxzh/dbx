@@ -37,11 +37,9 @@
 }
 
 @import "tailwindcss";
-@source "../**/*.{vue,ts,tsx,js,jsx,html}";
+@source "../**/*.{ts,tsx,js,jsx,html}";
 
 @import "tw-animate-css";
-
-@import "shadcn-vue/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 

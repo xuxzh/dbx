@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
@@ -48,7 +48,7 @@ function chunkNameForModule(id: string): string | undefined {
 
 export default defineConfig(async () => ({
   root: __dirname,
-  plugins: [vue(), tailwindcss()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -59,6 +59,7 @@ export default defineConfig(async () => ({
     outDir: "../../dist",
     emptyOutDir: true,
     rollupOptions: {
+      input: path.resolve(__dirname, "src/react/main.tsx"),
       output: {
         manualChunks: chunkNameForModule,
       },

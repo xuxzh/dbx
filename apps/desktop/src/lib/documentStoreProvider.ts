@@ -1,5 +1,6 @@
-import type { ComposerTranslation } from "vue-i18n";
 import type { DatabaseType } from "@/types/database";
+
+export type Translate = (key: string, named?: Record<string, unknown>) => string;
 import { quoteUnquotedObjectKeys } from "@/lib/mongoShellCommand";
 
 export type DocumentStoreKind = "mongodb" | "elasticsearch";
@@ -25,7 +26,7 @@ export type DocumentStoreProvider = {
   kind: DocumentStoreKind;
   filterInputLabel: string;
   sortInputLabel: string;
-  documentsLabel(options: { total: number; t: ComposerTranslation }): string;
+  documentsLabel(options: { total: number; t: Translate }): string;
   queryPreview(options: DocumentStoreQueryPreviewOptions): string;
   sortInputForColumn(column: string, direction: "asc" | "desc" | null): string;
 };
